@@ -3,7 +3,7 @@ import './App.css';
 import Fullinput from "./components/Fullinput";
 
 function App() {
-    const [message, setMessage] = useState([
+    let [message, setMessage] = useState([
             {message: 'message1'},
             {message: 'message2'},
             {message: 'message3'},
@@ -12,8 +12,10 @@ function App() {
         ]
     )
 
-    const addMessage = () => {
-        console.log("aaaaaaaa")
+    const addMessage = (title: string) => {
+        let newMessage = {message: title};
+            setMessage([newMessage, ...message])
+
     }
 
     return (
